@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: url("bgimage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ensure the background remains fixed */
+}
+
+header {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #fff; /* Light text color */
+  text-decoration: none;
+}
+
+.sidebar {
+  margin-top: 65px;
+  width: 220px;
+  background-image: url("sidebar.jpg");
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: #fff; /* Light text color */
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul ul {
+  display: none;
+  padding-left: 20px;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #666;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff; /* Light text color */
+}
+
+.sidebar ul li:hover {
+  background-color: #444; /* Darker background color on hover */
+}
+
+.sidebar ul li:hover ul {
+  display: block;
+}
+
+.notification {
+  background-color: #007bff; /* Blue notification background */
+  padding: 20px; /* Increased padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  color: #fff; /* Light text color */
+  position: fixed; /* Fixed position to make it always visible */
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+.notification p {
+  margin: 0; /* Remove default margin for <p> tag */
+  animation: marquee 10s linear infinite; /* Marquee animation */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(250, 249, 249, 0.747);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  margin: 10px;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #357abd;
+}
+.username {
+  color: white;
+}
+  

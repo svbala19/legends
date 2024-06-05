@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training and Internship Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    
+    <div class="sidebar" id="sidebar">
+        <h2 herf="dashboard.html" onclick="loadPage('dashboard.html')">Dashboard</h2>
+        <ul>
+            <li><a><i class="fas fa-users"></i> Staffs</a>
+                <ul>
+                    <li><a href="add_staff.php" ><i class="fas fa-user-plus"></i> Add Staff</a></li>
+                    <li><a href="manage_staff.php"><i class="fas fa-cogs"></i> Manage Staff</a></li>
+                </ul>
+            </li>
+            <li><a ><i class="fas fa-graduation-cap"></i> Students</a>
+                <ul>
+                    <li><a href="add_student.php" onclick="loadPage('')"><i class="fas fa-user-graduate"></i> Add Students</a></li>
+                    <li><a href="manage_students.php" onclick="loadPage('')"><i class="fas fa-tasks"></i> Manage Students</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fas fa-project-diagram"></i> Projects</a>
+                <ul>
+                    <li><a href="add_project.php" onclick="loadPage('')"><i class="fas fa-plus-circle"></i> Add Projects</a></li>
+                    <li><a href="manage_projects.php" onclick="loadPage('')"><i class="fas fa-tasks"></i> Manage Projects</a></li>
+                </ul>
+            </li>
+            <li><a href="view_attendance.php"><i class="fas fa-calendar-alt"></i> Attendance</a></li>
+            <li><a href="#" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>         
+   
+    <div class="main" id="main">
+        <h1>Internship & Training Management System</h1>
+        <div class="tiles">
+            <div class="tile">
+                <i class="fas fa-user"></i>
+                <a href="view_students.php"><h3>View Students</h3></a>
+            </div>
+            <div class="tile">
+                <i class="fas fa-users"></i>
+                <a href="view_staffs.php"><h3>View Staffs</h3></a>
+            </div>
+            <div class="tile">
+                <i class="fas fa-project-diagram"></i>
+                <a href="view_projects.php" onclick="loadPage('')"><h3>View Projects</h3></a>
+            </div>
+            <div class="tile">
+                <i class="fas fa-user"></i>
+                <a href="view_dailyactivity.php"><h3>View Daily Activity</h3></a>
+            </div>
+            <div class="tile">
+                <i class="fas fa-question"></i>
+                <a href="view_queries.php"><h3>View Queries</h3></a>
+            </div>
+            <div class="tile">
+                <i class="fas fa-bell"></i>
+                <a href="update_notification.php" onclick="loadPage('')"><h3>Update Notification</h3></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadPage(url) {
+            const main = document.getElementById('main');
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    main.innerHTML = html;
+                })
+                .catch(error => {
+                    main.innerHTML = '<h1>Error loading page.</h1>';
+                    console.error('Error loading page:', error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggles = sidebar.querySelectorAll('li');
+    
+            sidebarToggles.forEach(function(toggle) {
+                toggle.addEventListener('click', function() {
+                    const submenu = this.querySelector('ul');
+                    if (submenu) {
+                        submenu.classList.toggle('show');
+                    }
+                });
+            });
+        });
+        function confirmLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "index.html"; // Replace "logout.php" with the actual logout script
+    }
+}
+    </script>
+</body>
+</html>

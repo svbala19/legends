@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: url('bgimage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #333; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.header nav {
+    display: flex; /* Flex layout for navigation items */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+.header a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color from parent */
+}
+
+.header img {
+    vertical-align: middle; /* Align image vertically */
+}
+
+.sidebar {
+    width: 220px;
+    background-image: url("sidebar.jpg");
+    padding-top: 20px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul ul {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #666;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar ul li:hover {
+    background-color:cadetblue
+}
+
+.sidebar ul li:hover ul {
+    display: block;
+}
+
+.main {
+    margin-left: 250px;
+    padding: 100px;
+}
+
+
+h1 {
+    color: #fff;
+    text-align: center;
+}
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.tile {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile i {
+    margin-right: 10px;
+    
+}
+
+.tile:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.tile h3 {
+    margin: 0;
+}
+.tile a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.sidebar ul ul {
+    display: none;
+    padding-left: 20px;
+    transition: max-height 0.3s ease; /* Adding transition for smooth dropdown animation */
+    overflow: hidden; /* Hide overflowing content */
+    max-height: 0; /* Initially collapse the submenu */
+}
+
+.sidebar ul ul.show {
+    display: block;
+    max-height: 200px; /* Set the maximum height to allow for smooth expansion */
+}
+
+.tile a {
+    color: black;
+    text-decoration: none;
+}
+.textbox {
+    width: 50%; /* Set width to fill the container */
+    height: 18px; /* Set height as needed */
+    padding: 1px;
+    resize: horizontal; /* Allow vertical resizing */
+    margin-bottom: 10px;
+}
+.select{
+    width: 50%; /* Set width to fill the container */
+    height: 18px; /* Set height as needed */
+    padding: 1px;
+    resize: horizontal; /* Allow vertical resizing */
+    margin-bottom: 10px;
+}
+button {
+    background-color: #0032e586; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    margin-top: 50px;
+    margin-left: 140px;
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #1f28a1; /* Darker green background on hover */
+}
